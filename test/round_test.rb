@@ -7,7 +7,6 @@ require "../lib/round"
 
 class RoundTest < Minitest::Test
   def test_exists
-    # skip
     card_1 = Card.new("3","Hearts")
     card_2 = Card.new("4", "Clubs")
     deck = Deck.new([card_1, card_2])
@@ -16,18 +15,16 @@ class RoundTest < Minitest::Test
   end
 
   def test_has_deck_and_cards
-    skip
     card_1 = Card.new("3","Hearts")
     card_2 = Card.new("4", "Clubs")
     deck = Deck.new([card_1, card_2])
     round = Round.new(deck)
     assert_instance_of Deck, round.deck
-    assert_instance_of Array, round.cards
-    assert_instance_of Card, round.cards[0]
+    assert_instance_of Array, round.deck.cards
+    assert_instance_of Card, round.deck.cards[0]
   end
 
   def test_tracks_guesses
-    skip
     card_1 = Card.new("3","Hearts")
     card_2 = Card.new("4", "Clubs")
     deck = Deck.new([card_1, card_2])
@@ -36,7 +33,6 @@ class RoundTest < Minitest::Test
   end
 
   def test_gets_top_card
-    skip
     card_1 = Card.new("3","Hearts")
     card_2 = Card.new("4", "Clubs")
     deck = Deck.new([card_1, card_2])
@@ -45,7 +41,7 @@ class RoundTest < Minitest::Test
   end
 
   def test_records_guesses
-    skip
+    # skip
     card_1 = Card.new("3","Hearts")
     card_2 = Card.new("4", "Clubs")
     deck = Deck.new([card_1, card_2])
@@ -56,7 +52,7 @@ class RoundTest < Minitest::Test
   end
 
   def test_moves_top_card_after_guess
-    skip
+    # skip
     card_1 = Card.new("3","Hearts")
     card_2 = Card.new("4", "Clubs")
     deck = Deck.new([card_1, card_2])
@@ -67,7 +63,7 @@ class RoundTest < Minitest::Test
   end
 
   def test_counts_correct_guesses
-    skip
+    # skip
     card_1 = Card.new("3","Hearts")
     card_2 = Card.new("4", "Clubs")
     deck = Deck.new([card_1, card_2])
