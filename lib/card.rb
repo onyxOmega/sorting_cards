@@ -1,21 +1,20 @@
 class Card
-  attr_reader :value, :suit, :rank
+  attr_reader :value, :suit
   def initialize(value, suit)
     @value = value
     @suit = suit
-    @rank = value_rank + suit_rank
-    require 'pry'; binding.pry
+  end
+
+  def rank
+    value_rank + suit_rank
   end
 
   def value_rank
-    if value.to_i != nil
-      return value.to_i * 10
-    else
-      return 110 if @value == "Jack"
-      return 120 if @value == "King"
-      return 130 if @value == "Queen"
-      return 140 if @value == "Ace"
-    end
+    return 110 if @value == "Jack"
+    return 120 if @value == "King"
+    return 130 if @value == "Queen"
+    return 140 if @value == "Ace"
+    return value.to_i * 10
   end
 
   def suit_rank
@@ -24,5 +23,4 @@ class Card
     return 3 if @suit == "Hearts"
     return 4 if @suit == "Spades"
   end
-
 end
