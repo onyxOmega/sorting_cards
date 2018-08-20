@@ -9,4 +9,8 @@ class Deck
   def count
     @cards.length
   end
+
+  def sort
+    
+  end
 end
